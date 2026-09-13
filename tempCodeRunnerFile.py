@@ -1,10 +1,16 @@
-#Q2. Check Whether a Number is Positive, Negative, or Zero
-def PositiveNegativeZero(n):
-    if  n>0:
-        return "Positive"
-    elif n <0:
-        return "Negative"
-    else:
-        return "Zero"
-N = int(input("Enter your number:"))
-print(PositiveNegativeZero(N))
+def sumOfTwoNumber(n):
+    for i in range(2,n):
+        count=0
+        for j in range(1,i+1):
+            if i %j==0:
+                count+=1
+            count1=0
+        for j in range(1,n-i+1):
+            if (n-i) % j==0:
+                count1+=1
+        if count1==2 and count==2:
+         return True
+        
+    return False
+print(sumOfTwoNumber(11))
+
