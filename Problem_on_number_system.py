@@ -295,6 +295,133 @@ def sumOfTwoNumber(n):
         
     return False
 print(sumOfTwoNumber(11))
+#Q23. Check Whether a Number is an Armstrong Number
+
+def checkArmstrongNumber(n):
+    count =0
+    res=0
+    temp =n
+    test=n
+    while n!=0:
+        count+=1
+        n = n//10
+    while temp!=0:
+        lastdigit =temp%10
+        res = res+(lastdigit**count)
+        temp=temp//10
+    if test ==res:
+        return "Armstrong Number"
+    return "not armstrong number"
+print(checkArmstrongNumber(151))
 
 
+#Q24. Check Whether a Number is a Perfect Number
+def checkPerfectNumber(n):
+    sum =0
+    for i in range(1,n):
+        if n % i==0:
+            sum = sum+i
+    if sum ==n:
+        return "Perfect Number"
+    return "Not a perfect number"
+print(checkPerfectNumber(int(input("Enter the number:"))))
+#Q25. Check Whether a Number is an Abundant Number
+def abundantNumber(n):
+   sum =0
+   for i in range(1,n):
+       if n % i==0:
+           sum = sum+i
+   if sum>n:
+       return "Abundant Number"
+   return "not Abundant Number"
+print(abundantNumber(int(input("Enter your number:"))))
+       
+           
+#Q26.Check Whether a Number is Perfect, Abundant, or Deficient
+def checkperfectAbundantDeficient(n):
+   sum =0
+   for i in range(1,n):
+       if n % i==0:
+           sum = sum+i
+   if sum==n:
+       return "Perfect Number"
+   elif sum<n:
+       return "Deficient"
+   elif sum >n:
+       return "Abundent"
+       
+print(checkperfectAbundantDeficient(int(input("Enter your number:"))))
 
+    
+# Q27.Check Whether a Number is a Strong Number
+def checkStrong(n):
+    temp =n
+    sum=0
+    while temp!=0:
+        lastdigit =temp%10
+        fact =1
+        for i in range(1,lastdigit+1):
+            fact = fact*i
+        sum = sum+fact
+        temp =temp//10
+    
+    if sum==n:
+        return "Strong nuber"
+    return  "not Strong number"
+print(checkStrong(145))
+#Q28. Check Whether a Number is a Harshad Number
+def checkHarshadNumber(n):
+    sum =0
+    temp=n
+    while temp!=0:
+        lastdigit = temp%10
+        sum= sum+lastdigit
+        temp = temp//10
+    if n%sum==0:
+        return "Harshad Number"
+    return "Not Harshad Number"
+print(checkHarshadNumber(379))
+
+#Q29.Check Whether a Number is an Automorphic Number
+def automorphicNumber(n):
+    square = n**2
+    temp =n
+    count =0
+    while temp!=0:
+        count+=1
+        temp = temp//10
+    if square%(10**count) ==n:
+        return "Automorphic Number"
+    return  "not Automorphic Number"
+
+    
+
+        
+    
+print(automorphicNumber(76))
+
+# or
+
+#Q30. Find the Factorial of a Number
+def calculateFactorial(n):
+    fact =1
+    for i in range(1,n+1):
+        fact = fact*i
+    return fact
+print(calculateFactorial(int(input("Enter the number:"))))
+
+# 31. Calculate the Power of a Number
+def calculate_power(x,n):
+    return x**n
+print(calculate_power(2,5))
+#32. Find the Sum of an Arithmetic Progression
+def Arithmetic_progression(a,d,n):
+    print(2,end=",")
+    next =0
+    for i in range(1,n+1):
+        
+        next = next +d
+        print(next)
+Arithmetic_progression(2,5,8)
+
+        
